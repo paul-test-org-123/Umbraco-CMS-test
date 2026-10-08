@@ -38,7 +38,7 @@ jobs:
       actions: read # for github/codeql-action/init to get workflow details
       contents: read # for actions/checkout to fetch code
       security-events: write # for github/codeql-action/analyze to upload SARIF results
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
 
     strategy:
       fail-fast: false
@@ -51,7 +51,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v6
+        uses: useblacksmith/checkout@v1
 
       # We use the setup-dotnet action to set up .NET Core, otherwise the CodeQL CLI will not work with preview versions.
       - name: Setup .NET from global.json
