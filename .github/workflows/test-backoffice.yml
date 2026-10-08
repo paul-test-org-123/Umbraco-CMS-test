@@ -29,12 +29,12 @@ env:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     defaults:
       run:
         working-directory: src/Umbraco.Web.UI.Client
     steps:
-      - uses: actions/checkout@v6
+      - uses: useblacksmith/checkout@v1
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
@@ -52,12 +52,12 @@ jobs:
       - run: npm run generate:jsonschema:dist
 
   test:
-    runs-on: ubuntu-latest
+    runs-on: blacksmith-4vcpu-ubuntu-2404
     defaults:
       run:
         working-directory: src/Umbraco.Web.UI.Client
     steps:
-      - uses: actions/checkout@v6
+      - uses: useblacksmith/checkout@v1
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
